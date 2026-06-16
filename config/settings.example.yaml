@@ -1,0 +1,37 @@
+# =============================================================================
+# Research Pipeline — User Configuration
+# =============================================================================
+# Edit this file once after forking the repo. All settings are in ONE place.
+#
+# API keys must ALWAYS be set via environment variables or GitHub Secrets:
+#   DEEPSEEK_API_KEY, ANTHROPIC_API_KEY, OPENAI_API_KEY
+#
+# Settings can also be overridden by environment variables:
+#   LLM_BACKEND, TTS_BACKEND
+# =============================================================================
+
+# ---- GitHub Pages site settings ----
+# Change these to YOUR GitHub username and repo name after forking.
+site:
+  title: "Research Paper Digest"
+  url: "https://YOUR_USERNAME.github.io"
+  baseurl: "/YOUR_REPO_NAME"
+
+# ---- LLM backend ----
+llm:
+  backend: "deepseek"     # claude | openai | deepseek
+  model:                  # Optional: override default models (leave unset to use defaults below)
+    # claude: "claude-sonnet-4-6"
+    # openai: "gpt-4o"
+    # deepseek: "deepseek-chat"
+
+# ---- TTS backend ----
+tts:
+  backend: "edge"         # edge | openai
+  edge:                   # Settings for Microsoft Edge TTS (free, local)
+    voice: "zh-CN-XiaoxiaoNeural"
+    rate: "-5%"
+  openai:                 # Settings for OpenAI TTS (requires OPENAI_API_KEY)
+    model: "tts-1-hd"
+    voice: "nova"
+    speed: 0.95

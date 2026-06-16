@@ -1,0 +1,286 @@
+#!/usr/bin/env python3
+"""Orchestrator: Download PDF → extract text → LLM summary → TTS podcast → create pages.
+
+Supports both arXiv papers (auto-download PDF) and manual uploads (local PDF + metadata)."""
+
+import argparse
+import json
+import os
+import re
+import sys
+import time
+from datetime import date
+from pathlib import Path
+
+import requests
+
+from utils.config import config
+from utils.pdf_extractor import extract_text
+from utils.llm_client import LLMClient
+from utils.tts_client import TTSClient
+# import methods to recreate the paper page
+from generate_pages import paper_frontmatter, paper_body, generate_index_md
+
+
+def load_index():
+    if not config.index_path.exists():
+        print("[process] No papers_index.json found.", file=sys.stderr)
+        sys.exit(1)
+    with open(config.index_path) as f:
+        return json.load(f)
+
+
+def save_index(index):
+    config.data_dir.mkdir(parents=True, exist_ok=True)
+    with open(config.index_path, "w") as f:
+        json.dump(index, f, ensure_ascii=False, indent=2)
+
+
+def download_pdf(arxiv_id):
+    # Manual upload IDs don't have arXiv PDFs; caller should use --pdf_path instead.
+    if not re.match(r'^\d{4}\.\d{4,5}$', arxiv_id):
+        print(f"[process] ERROR: Cannot download PDF for non-arXiv ID '{arxiv_id}'.", file=sys.stderr)
+        print(f"[process] Use --pdf_path to provide a local PDF for manual uploads.", file=sys.stderr)
+        sys.exit(1)
+
+    config.pdf_cache_dir.mkdir(parents=True, exist_ok=True)
+    pdf_path = config.pdf_cache_dir / f"{arxiv_id}.pdf"
+
+    if pdf_path.exists():
+        print(f"[process] PDF already cached: {pdf_path}")
+        return str(pdf_path)
+
+    url = f"https://arxiv.org/pdf/{arxiv_id}.pdf"
+    print(f"[process] Downloading PDF from {url}")
+    headers = {"User-Agent": "ResearchPipeline/1.0 (mailto:research@example.com)"}
+
+    for attempt in range(3):
+        try:
+            resp = requests.get(url, headers=headers, timeout=120)
+            resp.raise_for_status()
+            with open(pdf_path, "wb") as f:
+                f.write(resp.content)
+            print(f"[process] Downloaded PDF: {pdf_path} ({len(resp.content)} bytes)")
+            return str(pdf_path)
+        except requests.RequestException as e:
+            if attempt < 2:
+                wait = 2 ** attempt * 5
+                print(f"[process] Download failed, retrying in {wait}s: {e}")
+                time.sleep(wait)
+            else:
+                print(f"[process] PDF download failed after 3 attempts: {e}", file=sys.stderr)
+                sys.exit(1)
+
+
+def save_summary(arxiv_id, summary, podcast_script=""):
+    config.summaries_dir.mkdir(parents=True, exist_ok=True)
+    data = {
+        "arxiv_id": arxiv_id,
+        "summary": summary,
+        "podcast_script": podcast_script,
+    }
+    path = config.summaries_dir / f"{arxiv_id}.json"
+    with open(path, "w") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+    print(f"[process] Saved summary to {path}")
+
+
+def create_podcast_page(paper_info, summary):
+    pid = paper_info["arxiv_id"]
+    title = paper_info.get("title", "Unknown").replace('"', '\\"')
+    authors = ", ".join(paper_info.get("authors", [])[:3])
+    if len(paper_info.get("authors", [])) > 3:
+        authors += " et al."
+
+    motivation = summary.get("motivation", "")
+    method = summary.get("method", "")
+    key_results = summary.get("key_results", "")
+    takeaways = summary.get("takeaways", "")
+
+    # Link to source: use abs_url if available (arXiv), otherwise link to paper page
+    abs_url = paper_info.get('abs_url', '')
+    if abs_url:
+        paper_link = f"[{title}]({abs_url})"
+    else:
+        paper_link = title
+
+    content = f"""---
+layout: podcast
+arxiv_id: "{pid}"
+title: "{title}"
+authors: "{authors}"
+published_date: {paper_info.get('published_date', '')}
+permalink: /podcasts/{pid}/
+---
+
+<audio controls style="width:100%;margin-bottom:2em;">
+  <source src="{config.site_baseurl}/assets/audio/{pid}.mp3" type="audio/mpeg">
+  Your browser does not support audio.
+</audio>
+
+## Paper
+
+**{paper_link}** — {authors}
+
+## Summary Card
+
+### Motivation
+{motivation}
+
+### Method
+{method}
+
+### Key Results
+{key_results}
+
+### Takeaways
+{takeaways}
+
+[Back to paper page]({config.site_baseurl}/papers/{pid}/)
+"""
+
+    config.podcasts_dir.mkdir(parents=True, exist_ok=True)
+    path = config.podcasts_dir / f"{pid}.md"
+    with open(path, "w") as f:
+        f.write(content)
+    print(f"[process] Created podcast page: {path}")
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--arxiv_id", required=True)
+    parser.add_argument("--llm_backend", default=None)
+    parser.add_argument("--tts_backend", default=None)
+    # Manual upload / local PDF support
+    parser.add_argument("--pdf_path", default=None)
+    parser.add_argument("--no_download", action="store_true")
+    parser.add_argument("--title", default=None)
+    parser.add_argument("--authors", default=None)
+    parser.add_argument("--abstract", default=None)
+    parser.add_argument("--topic", default="manual")
+    parser.add_argument("--published_date", default=None)
+    args = parser.parse_args()
+
+    arxiv_id = args.arxiv_id.strip()
+    llm_backend = args.llm_backend or config.llm_backend
+    tts_backend = args.tts_backend or config.tts_backend
+    is_manual = bool(args.pdf_path)
+
+    print(f"[process] Processing {arxiv_id} (LLM: {llm_backend}, TTS: {tts_backend}, manual: {is_manual})")
+
+    index = load_index()
+
+    if arxiv_id not in index:
+        if is_manual and args.title:
+            # Manual upload: create paper entry on the fly from CLI metadata
+            author_list = [a.strip() for a in args.authors.split(",")] if args.authors else ["Unknown"]
+            paper_info = {
+                "arxiv_id": arxiv_id,
+                "title": args.title,
+                "authors": author_list,
+                "first_author": author_list[0] if author_list else "Unknown",
+                "abstract": args.abstract or "",
+                "published_date": args.published_date or date.today().isoformat(),
+                "primary_category": "",
+                "pdf_url": "",
+                "abs_url": "",
+                "topic": args.topic,
+                "interesting": True,   # manual uploads go directly to favorites
+                "has_summary": False,
+                "has_podcast": False,
+            }
+            index[arxiv_id] = paper_info
+            print(f"[process] Created manual paper entry for {arxiv_id}")
+        elif re.match(r'^\d{4}\.\d{4,5}$', arxiv_id) or re.match(r'^manual-(\d{8}|\d{4}-\d{2}-\d{2})(-[\w-]*)?$', arxiv_id):
+            # arXiv paper not yet in index: fetch metadata from arXiv API
+            print(f"[process] Paper {arxiv_id} not in index — fetching from arXiv API...")
+            from utils.arxiv_api import fetch_abstract, ArxivFetchError
+            try:
+                arxiv_data = fetch_abstract(arxiv_id)
+                paper_info = {
+                    "arxiv_id": arxiv_id,
+                    "title": arxiv_data.get("title") or args.title or "Unknown",
+                    "authors": arxiv_data.get("authors", ["Unknown"]),
+                    "first_author": arxiv_data.get("first_author", "Unknown"),
+                    "abstract": arxiv_data.get("abstract") or args.abstract or "",
+                    "published_date": arxiv_data.get("published_date") or args.published_date or "",
+                    "primary_category": arxiv_data.get("primary_category", ""),
+                    "pdf_url": arxiv_data.get("pdf_url", f"https://arxiv.org/pdf/{arxiv_id}.pdf"),
+                    "abs_url": arxiv_data.get("abs_url", f"https://arxiv.org/abs/{arxiv_id}"),
+                    "topic": "grasp",
+                    "interesting": True,
+                    "has_summary": False,
+                    "has_podcast": False,
+                }
+                index[arxiv_id] = paper_info
+                print(f"[process] Created entry from arXiv API for {arxiv_id}: {paper_info['title'][:80]}...")
+            except ArxivFetchError as e:
+                print(f"[process] Failed to fetch {arxiv_id} from arXiv: {e}", file=sys.stderr)
+                sys.exit(1)
+        else:
+            print(f"[process] Paper {arxiv_id} not in index and not a recognized format.", file=sys.stderr)
+            sys.exit(1)
+
+    paper_info = index[arxiv_id]
+
+    # Step 1: Obtain PDF (download from arXiv or use local file)
+    if args.pdf_path:
+        pdf_path = args.pdf_path
+        if not os.path.exists(pdf_path):
+            print(f"[process] PDF not found: {pdf_path}", file=sys.stderr)
+            sys.exit(1)
+        print(f"[process] Using local PDF: {pdf_path}")
+    else:
+        pdf_path = download_pdf(arxiv_id)
+
+    print("[process] Extracting text from PDF...")
+    paper_text, was_truncated = extract_text(pdf_path)
+    print(f"[process] Extracted {len(paper_text)} chars (truncated: {was_truncated})")
+
+    # Step 2: Generate English summary
+    print("[process] Generating English summary via LLM...")
+    llm = LLMClient(llm_backend, config)
+    summary = llm.generate_summary(paper_info, paper_text)
+    print(f"[process] Summary keys: {list(summary.keys())}")
+
+    # Step 3: Generate Chinese podcast script
+    print("[process] Generating Chinese podcast script via LLM...")
+    podcast_script = llm.generate_podcast_script(paper_info, summary, paper_text)
+    print(f"[process] Podcast script: {len(podcast_script)} chars")
+
+    # Step 4: Save summary + podcast script
+    save_summary(arxiv_id, summary, podcast_script)
+
+    # Step 5: TTS audio generation
+    print("[process] Generating audio via TTS...")
+    config.audio_dir.mkdir(parents=True, exist_ok=True)
+    audio_path = config.audio_dir / f"{arxiv_id}.mp3"
+    tts = TTSClient(tts_backend, config)
+    duration = tts.generate_audio(podcast_script, str(audio_path))
+    duration_min = duration / 60
+    print(f"[process] Audio saved: {audio_path} ({duration_min:.1f} min)")
+
+    # Step 6: Create podcast page
+    create_podcast_page(paper_info, summary)
+
+    # Step 7: Update index
+    paper_info["has_summary"] = True
+    paper_info["has_podcast"] = True
+    paper_info["interesting"] = True
+    save_index(index)
+
+    # Step 8: Update paper page markdown so it links to the podcast
+    md_path = config.papers_dir / f"{arxiv_id}.md"
+    content = f"{paper_frontmatter(paper_info)}\n\n{paper_body(paper_info)}"
+    with open(md_path, "w") as f:
+        f.write(content)
+    print(f"[process] Updated paper page: {md_path}")
+
+    # Step 9: Re-generate the index page so badges are updated
+    generate_index_md(index)
+
+    print(f"[process] Done processing {arxiv_id}.")
+
+
+if __name__ == "__main__":
+    main()

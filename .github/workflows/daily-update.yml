@@ -1,0 +1,41 @@
+name: Daily Paper Update
+
+on:
+  schedule:
+    - cron: "0 12 * * *"   # 12:00 UTC, matches original Dexterous-grasp-daily timing
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Search arXiv for new papers
+        run: python scripts/fetch_abstracts.py
+
+      - name: Generate Jekyll paper pages
+        run: python scripts/generate_pages.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "research-pipeline-bot"
+          git config user.email "bot@research-pipeline.local"
+          git add _papers/ data/papers_index.json index.md config/topics.yaml
+          if ! git diff --cached --quiet; then
+            git commit -m "daily update: sync papers from arxiv [skip ci]"
+            git push
+          else
+            echo "No new papers today — nothing to commit."
+          fi

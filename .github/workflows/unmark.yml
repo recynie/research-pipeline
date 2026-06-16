@@ -1,0 +1,78 @@
+name: Process Unmark Request
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  process:
+    if: startsWith(github.event.issue.title, '[Unmark]')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Parse paper_id from issue
+        id: parse
+        run: |
+          # Match arXiv IDs (e.g. 2606.09314) or manual upload IDs (e.g. manual-20260611-title-slug)
+          PAPER_ID=$(echo "${{ github.event.issue.title }}" | grep -oP '\d{4}\.\d{4,5}|manual-\d{4}-?\d{2}-?\d{2}[-a-zA-Z0-9]*' | head -1)
+          if [ -z "$PAPER_ID" ]; then
+            PAPER_ID=$(echo "${{ github.event.issue.body }}" | grep -oP '\d{4}\.\d{4,5}|manual-\d{4}-?\d{2}-?\d{2}[-a-zA-Z0-9]*' | head -1)
+          fi
+          echo "paper_id=$PAPER_ID" >> "$GITHUB_OUTPUT"
+          echo "Parsed paper_id: $PAPER_ID"
+
+      - name: Validate paper_id
+        if: steps.parse.outputs.paper_id == ''
+        run: |
+          echo "Could not parse paper ID from issue."
+          exit 1
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python deps
+        run: pip install -r requirements.txt
+
+      - name: Unmark paper
+        run: |
+          python scripts/unmark_paper.py --arxiv_id "${{ steps.parse.outputs.paper_id }}"
+
+      - name: Commit changes
+        run: |
+          git config user.name "research-pipeline-bot"
+          git config user.email "bot@research-pipeline.local"
+          git add data/papers_index.json _papers/ _podcasts/ _data/summaries/ assets/audio/ _uploads/ index.md
+          if ! git diff --quiet --cached; then
+            git commit -m "unmark ${{ steps.parse.outputs.paper_id }} from favorites [skip ci]"
+            git push
+          else
+            echo "No changes to commit."
+          fi
+
+      - name: Post result comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const id = '${{ steps.parse.outputs.paper_id }}';
+            await github.rest.issues.createComment({
+              ...context.repo,
+              issue_number: context.issue.number,
+              body: `Paper \`${id}\` has been removed from favorites. The favorites page will update on the next site rebuild.`
+            });
+
+      - name: Close issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.update({
+              ...context.repo,
+              issue_number: context.issue.number,
+              state: 'closed'
+            });
