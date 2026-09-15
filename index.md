@@ -5,7 +5,7 @@ title: "AI Research Daily"
 
 # AI Research Daily — Daily Paper Digest
 
-All 79 papers in the collection. [📌 View favorites]({{ site.baseurl }}/favorites/) for archived papers.
+All 69 papers in the collection. [📌 View favorites]({{ site.baseurl }}/favorites/) for archived papers.
 
 
 ## [Ecdysis: Efficient and Effective Training of Runtime Harnesses for LLM Agents]({{ site.baseurl }}/papers/2609.11677/)
@@ -695,106 +695,6 @@ Language models act through tools, yet practical agents face libraries containin
 Managing resources across IoT, edge, and cloud layers calls for continuous, context-aware decisions under constraints that rarely stay fixed. Deep reinforcement learning (DRL) handles this class of problems well, and large language models (LLMs) are increasingly used to augment DRL pipelines, yet th...
 
 [Read more →]({{ site.baseurl }}/papers/2609.09348/)
-
----
-
-## [Online Surrogate Repair: Decoupling High-Fidelity Feedback from Search Length in Closed-Loop Discovery]({{ site.baseurl }}/papers/2609.07655/)
-
-**2026-09-07** · Xiaotang Feng et al. 
-
-Closed-loop AI scientists can generate candidate designs at low marginal computational cost, whereas reliable feedback may require wet-lab synthesis, characterization, or high-fidelity computation. Addressing this imbalance through custom laboratory automation remains infrastructure-intensive and co...
-
-[Read more →]({{ site.baseurl }}/papers/2609.07655/)
-
----
-
-## [AgentIdeaBench: Benchmarking Scientific Ideation in the Agent Era]({{ site.baseurl }}/papers/2609.07611/)
-
-**2026-09-07** · Yunxiang Mo et al. 
-
-Scientific ideation is the capacity to formulate novel and testable hypotheses from scientific evidence, and autonomous AI scientists depend on it. Existing evaluations largely assess it by asking models to generate ideas from a static, curated set of reference papers. That passive setup departs fro...
-
-[Read more →]({{ site.baseurl }}/papers/2609.07611/)
-
----
-
-## [Eliciting Self-Verification in Multimodal Reasoning Agents with Reinforcement Learning]({{ site.baseurl }}/papers/2609.08025/)
-
-**2026-09-07** · Vishwas Sathish et al. 
-
-Reasoning agents increasingly rely on external tools such as web search to answer complex queries. Reinforcement learning (RL) finetuning algorithms such as GRPO have improved long-form reasoning in text-only language models, particularly for coding and mathematics. Reliable tool use in multimodal a...
-
-[Read more →]({{ site.baseurl }}/papers/2609.08025/)
-
----
-
-## [A Layered Analysis of Disagreement And Answer Quality in Multi-Agent LLM Debate]({{ site.baseurl }}/papers/2609.08016/)
-
-**2026-09-07** · Chen Qian et al. 
-
-Multi-agent debate, in which several LLMs exchange arguments before answering, is widely assumed to improve answer quality by surfacing genuine disagreement. That mechanism is rarely checked. We introduce four measurements: (A) the agreement a debater reports; (B) whether its reply text actually pus...
-
-[Read more →]({{ site.baseurl }}/papers/2609.08016/)
-
----
-
-## [Sparks of In Silico Cognitive Science: Theories from Simulated Data Can Generalize to Humans]({{ site.baseurl }}/papers/2609.08003/)
-
-**2026-09-07** · Akshay K. Jagadish et al. 
-
-Behavioral foundation models have been proposed as stand-ins for human participants across settings, but it is unclear whether theories discovered on them generalize to humans or merely characterize the simulator. We ran the Automated Cognitive Scientist (\textsc{AutoCog}), a closed-loop discovery s...
-
-[Read more →]({{ site.baseurl }}/papers/2609.08003/)
-
----
-
-## [From Event Logs to Governed Action: A BlueSky Agenda for Agentic Process Mining]({{ site.baseurl }}/papers/2609.07984/)
-
-**2026-09-07** · Yiyuan Yang et al. 
-
-Process mining has long turned event logs into process knowledge: discovered models, conformance evidence, bottleneck diagnoses, and runtime predictions. Agentic AI changes the target. Process-aware agents will not only ask what happened. They will ask whether a proposed action should be taken, give...
-
-[Read more →]({{ site.baseurl }}/papers/2609.07984/)
-
----
-
-## [PRIMUS: Identity, Governance, and Verification for Multi-Agent Federations]({{ site.baseurl }}/papers/2609.07910/)
-
-**2026-09-07** · Sasank Annapureddy et al. 
-
-Multi-agent federations need governance that answers three questions under adversarial conditions: who participated (identity), did they conform (enforcement), and who decides (authority). A separate question is whether the verification machinery that polices a federation's outputs can also steer a ...
-
-[Read more →]({{ site.baseurl }}/papers/2609.07910/)
-
----
-
-## [What Does an LLM-Agent Leaderboard Rank Actually Compare?]({{ site.baseurl }}/papers/2609.07785/)
-
-**2026-09-07** · Wei-Jung Huang et al. 
-
-An LLM-agent leaderboard invites a familiar inference: an agent ranked above another is the better agent. Public evaluation logs may not support that conclusion when systems differ in task mixture, label source, release detail, or cost rule. We study what leaderboard scores estimate and when they ju...
-
-[Read more →]({{ site.baseurl }}/papers/2609.07785/)
-
----
-
-## [xDailyBench: Benchmarking LLMs on Professional Consultation for Real-Life Problems]({{ site.baseurl }}/papers/2609.07784/)
-
-**2026-09-07** · Yongchang Peng et al. 
-
-Large language models (LLMs) are increasingly used for everyday assistance, yet existing benchmarks only partially reflect the requests users naturally make in practice. Real-world requests are often open-ended, casually specified, and context-dependent, requiring models not only to follow explicit ...
-
-[Read more →]({{ site.baseurl }}/papers/2609.07784/)
-
----
-
-## [EmoMed: An Emotionally-Aware Agent for Multimodal Medical Support with Real-Time Information Retrieval]({{ site.baseurl }}/papers/2609.07194/)
-
-**2026-09-07** · Ivan Nasonov et al. 
-
-We present EmoMed - a multimodal medical consultation agent that adapts its responses based on users' emotional states while maintaining clinical accuracy. The system processes text and medical images, detects affect indicators (anxiety, confusion, urgency) from user input, and adjusts response tone...
-
-[Read more →]({{ site.baseurl }}/papers/2609.07194/)
 
 ---
 
