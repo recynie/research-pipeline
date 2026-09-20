@@ -5,36 +5,36 @@ title: "AI Research Daily"
 
 # AI Research Daily — Daily Paper Digest
 
-**2026-09-19** — 68 new papers from arXiv. [📌 View favorites]({{ site.baseurl }}/favorites/) for archived papers.
+**2026-09-20** — 71 new papers from arXiv. [📌 View favorites]({{ site.baseurl }}/favorites/) for archived papers.
 
 
-## [Generalized Agent Iteration: One Formal Framework for Iterative Policy Improvement and Recursive Self-Improvement]({{ site.baseurl }}/papers/2609.13406/)
+## [Semantic Knowledge Technologies: what the Semantic Web lost sight of, and what it never had]({{ site.baseurl }}/papers/2609.14121/)
 
-**2026-09-11** · Hongyao Tang et al. 
+**2026-09-12** · Achille Zappa et al. 
 
-When we speak of recursive self-improvement (RSI), are we speaking of a phenomenon, a mechanism, or a prospect? Towards autonomous and evolving intelligence, RSI is being claimed at many scales, while no single framework that formally describes these emerging instances exists. Its counterpart in the...
+The Semantic Web set out to give information a machine-interpretable form so that software could integrate and reason over it. Its standards became scientific knowledge infrastructure, but the machine competence it promised did not follow, and the systems now answering questions over scientific know...
 
-[Read more →]({{ site.baseurl }}/papers/2609.13406/)
-
----
-
-## [BlueLM-GUI Technical Report: A Real-Device-Centric Flywheel for Self-Improving Mobile GUI Agents]({{ site.baseurl }}/papers/2609.12394/)
-
-**2026-09-11** · Tong Ye et al. 
-
-Mobile GUI agents are shifting from multi-module frameworks to native models trained end-to-end, yet industrial deployment faces three persistent gaps. Sandbox training produces a distribution mismatch with production environments; expensive real-device failures remain underutilized; and fixed bench...
-
-[Read more →]({{ site.baseurl }}/papers/2609.12394/)
+[Read more →]({{ site.baseurl }}/papers/2609.14121/)
 
 ---
 
-## [EvoRS: On-Policy Self-Evolution of Reward Systems for Open-Ended Reinforcement Learning]({{ site.baseurl }}/papers/2609.12459/)
+## [RA-CoA: Training-free Fashion Image Captioning via Retrieval-Augmented Chain-of-Attributes]({{ site.baseurl }}/papers/2609.14100/)
 
-**2026-09-11** · Weiyuan Li et al. 
+**2026-09-12** · Abhirama Subramanyam Penamakuri et al. 
 
-Open-ended reinforcement learning often relies on rubric-based rewards for tasks without directly verifiable answers. Yet the policy and reward system form a dynamic feedback loop: as the policy optimizes the current reward, an initially useful reward system may become unreliable due to reward hacki...
+Fashion Image Captioning (FIC) plays a vital role in enhancing user experience and product search in e-commerce platforms. Unlike natural scene image captioning, FIC requires fine-grained visual reasoning and knowledge of domain-specific terminology to capture subtle attributes such as neckline and ...
 
-[Read more →]({{ site.baseurl }}/papers/2609.12459/)
+[Read more →]({{ site.baseurl }}/papers/2609.14100/)
+
+---
+
+## [Enhancing Event Candidate Acquisition for Event Linking]({{ site.baseurl }}/papers/2609.13670/)
+
+**2026-09-12** · Ziyang Zhang et al. 
+
+Event linking associates event mentions in text with entries in a knowledge base (KB), or identifies them as out-of-KB events. Although existing methods use different architectures, candidate event acquisition can still be weakened by short ambiguous mentions, noisy arguments, and evidence that is u...
+
+[Read more →]({{ site.baseurl }}/papers/2609.13670/)
 
 ---
 
@@ -48,6 +48,16 @@ Retrieval-Augmented Generation (RAG) has empowered Large Language Models (LLMs) 
 
 ---
 
+## [EvoRS: On-Policy Self-Evolution of Reward Systems for Open-Ended Reinforcement Learning]({{ site.baseurl }}/papers/2609.12459/)
+
+**2026-09-11** · Weiyuan Li et al. 
+
+Open-ended reinforcement learning often relies on rubric-based rewards for tasks without directly verifiable answers. Yet the policy and reward system form a dynamic feedback loop: as the policy optimizes the current reward, an initially useful reward system may become unreliable due to reward hacki...
+
+[Read more →]({{ site.baseurl }}/papers/2609.12459/)
+
+---
+
 ## [Asclepius: An Adaptive Harness for Long-Horizon Clinical Agents]({{ site.baseurl }}/papers/2609.13543/)
 
 **2026-09-11** · Grace Chang Yuan et al. 
@@ -55,6 +65,26 @@ Retrieval-Augmented Generation (RAG) has empowered Large Language Models (LLMs) 
 LLM agents are predominantly benchmarked on short, single-task trajectories, yet real deployments run for hours under contention, surfacing a different class of failures. We use the Clinical Environment Simulator (CES), in which an agent manages an entire emergency-department shift under continuous ...
 
 [Read more →]({{ site.baseurl }}/papers/2609.13543/)
+
+---
+
+## [BlueLM-GUI Technical Report: A Real-Device-Centric Flywheel for Self-Improving Mobile GUI Agents]({{ site.baseurl }}/papers/2609.12394/)
+
+**2026-09-11** · Tong Ye et al. 
+
+Mobile GUI agents are shifting from multi-module frameworks to native models trained end-to-end, yet industrial deployment faces three persistent gaps. Sandbox training produces a distribution mismatch with production environments; expensive real-device failures remain underutilized; and fixed bench...
+
+[Read more →]({{ site.baseurl }}/papers/2609.12394/)
+
+---
+
+## [Generalized Agent Iteration: One Formal Framework for Iterative Policy Improvement and Recursive Self-Improvement]({{ site.baseurl }}/papers/2609.13406/)
+
+**2026-09-11** · Hongyao Tang et al. 
+
+When we speak of recursive self-improvement (RSI), are we speaking of a phenomenon, a mechanism, or a prospect? Towards autonomous and evolving intelligence, RSI is being claimed at many scales, while no single framework that formally describes these emerging instances exists. Its counterpart in the...
+
+[Read more →]({{ site.baseurl }}/papers/2609.13406/)
 
 ---
 
@@ -68,16 +98,6 @@ Chemistry, Manufacturing and Controls (CMC) process development generates an eno
 
 ---
 
-## [VikingRAG: Accurate and Token-efficient Retrieval-augmented Generation over Structured Documents]({{ site.baseurl }}/papers/2609.11390/)
-
-**2026-09-10** · Peiyuan Gao et al. 
-
-State-of-the-art retrieval-augmented generation (RAG) methods exploit document structures to acquire sufficient evidence, but often incur substantial token costs. To reduce structural-context tokens without compromising high RAG accuracy, we present {\sf VikingRAG}, a directory-aware semantic data m...
-
-[Read more →]({{ site.baseurl }}/papers/2609.11390/)
-
----
-
 ## [Ecdysis: Efficient and Effective Training of Runtime Harnesses for LLM Agents]({{ site.baseurl }}/papers/2609.11677/)
 
 **2026-09-10** · Ruiqing Yue et al. 
@@ -85,6 +105,16 @@ State-of-the-art retrieval-augmented generation (RAG) methods exploit document s
 Self-evolving runtime harnesses can substantially improve the capabilities of large language model (LLM) agents and provide a promising paradigm for optimizing agent execution. Existing harness evolution methods typically rely on iterative search, repeatedly evaluating and revising candidate harness...
 
 [Read more →]({{ site.baseurl }}/papers/2609.11677/)
+
+---
+
+## [VikingRAG: Accurate and Token-efficient Retrieval-augmented Generation over Structured Documents]({{ site.baseurl }}/papers/2609.11390/)
+
+**2026-09-10** · Peiyuan Gao et al. 
+
+State-of-the-art retrieval-augmented generation (RAG) methods exploit document structures to acquire sufficient evidence, but often incur substantial token costs. To reduce structural-context tokens without compromising high RAG accuracy, we present {\sf VikingRAG}, a directory-aware semantic data m...
+
+[Read more →]({{ site.baseurl }}/papers/2609.11390/)
 
 ---
 
@@ -98,16 +128,6 @@ Traditional software delivery assumes a static paradigm: code is constructed pri
 
 ---
 
-## [SE-GoS: Self-Evolving Graph-of-Skills for Skill Library at Scale]({{ site.baseurl }}/papers/2609.08228/)
-
-**2026-09-08** · Dawei Fu et al. 
-
-Modern LLM agents increasingly rely on reusable skills, yet as skill libraries scale to thousands of entries, effective retrieval becomes a bottleneck. Graph-of-Skills (GoS) addresses this challenge by exploiting dependency-aware graph structure for scalable skill retrieval, while SkillDAG further d...
-
-[Read more →]({{ site.baseurl }}/papers/2609.08228/)
-
----
-
 ## [Procedural Graphs: Self-Evolving Execution Structures for LLM Agents]({{ site.baseurl }}/papers/2609.09153/)
 
 **2026-09-08** · Yuxing Lu et al. 
@@ -115,6 +135,16 @@ Modern LLM agents increasingly rely on reusable skills, yet as skill libraries s
 Large language models are increasingly deployed as agents that plan over long horizons and act through external tools. Most agents select actions through unconstrained generation over an accumulating history, leaving implicit the procedural knowledge of what to do, in what order, and under which con...
 
 [Read more →]({{ site.baseurl }}/papers/2609.09153/)
+
+---
+
+## [SE-GoS: Self-Evolving Graph-of-Skills for Skill Library at Scale]({{ site.baseurl }}/papers/2609.08228/)
+
+**2026-09-08** · Dawei Fu et al. 
+
+Modern LLM agents increasingly rely on reusable skills, yet as skill libraries scale to thousands of entries, effective retrieval becomes a bottleneck. Graph-of-Skills (GoS) addresses this challenge by exploiting dependency-aware graph structure for scalable skill retrieval, while SkillDAG further d...
+
+[Read more →]({{ site.baseurl }}/papers/2609.08228/)
 
 ---
 
@@ -128,13 +158,13 @@ Aerial Vision-and-Language Navigation requires drones to follow natural-language
 
 ---
 
-## [EmoMed: An Emotionally-Aware Agent for Multimodal Medical Support with Real-Time Information Retrieval]({{ site.baseurl }}/papers/2609.07194/)
+## [Online Surrogate Repair: Decoupling High-Fidelity Feedback from Search Length in Closed-Loop Discovery]({{ site.baseurl }}/papers/2609.07655/)
 
-**2026-09-07** · Ivan Nasonov et al. 
+**2026-09-07** · Xiaotang Feng et al. 
 
-We present EmoMed - a multimodal medical consultation agent that adapts its responses based on users' emotional states while maintaining clinical accuracy. The system processes text and medical images, detects affect indicators (anxiety, confusion, urgency) from user input, and adjusts response tone...
+Closed-loop AI scientists can generate candidate designs at low marginal computational cost, whereas reliable feedback may require wet-lab synthesis, characterization, or high-fidelity computation. Addressing this imbalance through custom laboratory automation remains infrastructure-intensive and co...
 
-[Read more →]({{ site.baseurl }}/papers/2609.07194/)
+[Read more →]({{ site.baseurl }}/papers/2609.07655/)
 
 ---
 
@@ -148,23 +178,13 @@ Scientific ideation is the capacity to formulate novel and testable hypotheses f
 
 ---
 
-## [Online Surrogate Repair: Decoupling High-Fidelity Feedback from Search Length in Closed-Loop Discovery]({{ site.baseurl }}/papers/2609.07655/)
+## [EmoMed: An Emotionally-Aware Agent for Multimodal Medical Support with Real-Time Information Retrieval]({{ site.baseurl }}/papers/2609.07194/)
 
-**2026-09-07** · Xiaotang Feng et al. 
+**2026-09-07** · Ivan Nasonov et al. 
 
-Closed-loop AI scientists can generate candidate designs at low marginal computational cost, whereas reliable feedback may require wet-lab synthesis, characterization, or high-fidelity computation. Addressing this imbalance through custom laboratory automation remains infrastructure-intensive and co...
+We present EmoMed - a multimodal medical consultation agent that adapts its responses based on users' emotional states while maintaining clinical accuracy. The system processes text and medical images, detects affect indicators (anxiety, confusion, urgency) from user input, and adjusts response tone...
 
-[Read more →]({{ site.baseurl }}/papers/2609.07655/)
-
----
-
-## [OpenDiscoveryTrace: Process Traces for Evaluating AI Scientist Workflows]({{ site.baseurl }}/papers/2609.09203/)
-
-**2026-09-05** · Aayam Bansal et al. 
-
-Existing benchmarks for autonomous AI scientists evaluate only final outputs---generated code, hypotheses, or papers---yet discard the reasoning process by which those outputs were obtained. This makes it impossible to audit scientific methodology, diagnose failure modes, or distinguish systematic r...
-
-[Read more →]({{ site.baseurl }}/papers/2609.09203/)
+[Read more →]({{ site.baseurl }}/papers/2609.07194/)
 
 ---
 
@@ -178,13 +198,13 @@ We introduce ABLE, a benchmark for evaluating LLM agents' ability to use biologi
 
 ---
 
-## [CoSkill: Joint Reinforcement Learning of Reasoning and Meta-Skill Agents for Hierarchical Skill Evolution]({{ site.baseurl }}/papers/2609.04865/)
+## [OpenDiscoveryTrace: Process Traces for Evaluating AI Scientist Workflows]({{ site.baseurl }}/papers/2609.09203/)
 
-**2026-09-04** · Jinyuan Feng et al. 
+**2026-09-05** · Aayam Bansal et al. 
 
-Skill libraries improve the sample efficiency of agentic reinforcement learning (RL) by enabling large language model (LLM) agents to reuse procedural knowledge. Yet existing paradigms exhibit structural shortcomings: they either decouple skill evolution from policy optimization or instantiate meta-...
+Existing benchmarks for autonomous AI scientists evaluate only final outputs---generated code, hypotheses, or papers---yet discard the reasoning process by which those outputs were obtained. This makes it impossible to audit scientific methodology, diagnose failure modes, or distinguish systematic r...
 
-[Read more →]({{ site.baseurl }}/papers/2609.04865/)
+[Read more →]({{ site.baseurl }}/papers/2609.09203/)
 
 ---
 
@@ -208,6 +228,16 @@ This Comment emerges from TPC26 (https://tpc26.org), a conference convening lead
 
 ---
 
+## [CoSkill: Joint Reinforcement Learning of Reasoning and Meta-Skill Agents for Hierarchical Skill Evolution]({{ site.baseurl }}/papers/2609.04865/)
+
+**2026-09-04** · Jinyuan Feng et al. 
+
+Skill libraries improve the sample efficiency of agentic reinforcement learning (RL) by enabling large language model (LLM) agents to reuse procedural knowledge. Yet existing paradigms exhibit structural shortcomings: they either decouple skill evolution from policy optimization or instantiate meta-...
+
+[Read more →]({{ site.baseurl }}/papers/2609.04865/)
+
+---
+
 ## [Molecular Déjà Vu: Digit-Level Retrieval of Published Values in Frontier Language Models]({{ site.baseurl }}/papers/2609.05381/)
 
 **2026-09-04** · Matthias Busch et al. 
@@ -218,13 +248,13 @@ Large language models (LLMs) are increasingly evaluated on molecular property be
 
 ---
 
-## [SimSkill: A Self-Evolving LLM Agent for Skill and Knowledge Accumulation in Traffic Simulation]({{ site.baseurl }}/papers/2609.03753/)
+## [GRACE: Graph-Grounded Reflective Agent Copilot Engine for Expert-in-the-Loop Knowledge Expansion]({{ site.baseurl }}/papers/2609.04442/)
 
-**2026-09-03** · Qi Liu et al. 
+**2026-09-03** · John Seon Keun Yi et al. 
 
-Cumulative culture enables humans to preserve, reuse, and extend knowledge and skills across experiences and generations. Inspired by this principle, we introduce \textit{SimSkill}, a self-evolving agent built around the Simulation of Urban MObility (SUMO) traffic simulator. SimSkill continually ide...
+Large language models deployed in high-stakes settings frequently generate plausible but ungrounded claims. Standard retrieval-augmented generation (RAG) pipelines offer limited remedy, since they retrieve isolated passages without tracking cross-document evidence relationships or quantifying uncert...
 
-[Read more →]({{ site.baseurl }}/papers/2609.03753/)
+[Read more →]({{ site.baseurl }}/papers/2609.04442/)
 
 ---
 
@@ -238,13 +268,13 @@ Making science computable requires representations of both scientific knowledge 
 
 ---
 
-## [GRACE: Graph-Grounded Reflective Agent Copilot Engine for Expert-in-the-Loop Knowledge Expansion]({{ site.baseurl }}/papers/2609.04442/)
+## [SimSkill: A Self-Evolving LLM Agent for Skill and Knowledge Accumulation in Traffic Simulation]({{ site.baseurl }}/papers/2609.03753/)
 
-**2026-09-03** · John Seon Keun Yi et al. 
+**2026-09-03** · Qi Liu et al. 
 
-Large language models deployed in high-stakes settings frequently generate plausible but ungrounded claims. Standard retrieval-augmented generation (RAG) pipelines offer limited remedy, since they retrieve isolated passages without tracking cross-document evidence relationships or quantifying uncert...
+Cumulative culture enables humans to preserve, reuse, and extend knowledge and skills across experiences and generations. Inspired by this principle, we introduce \textit{SimSkill}, a self-evolving agent built around the Simulation of Urban MObility (SUMO) traffic simulator. SimSkill continually ide...
 
-[Read more →]({{ site.baseurl }}/papers/2609.04442/)
+[Read more →]({{ site.baseurl }}/papers/2609.03753/)
 
 ---
 
@@ -268,16 +298,6 @@ Autonomous agents are beginning to carry out machine-learning (ML) research end 
 
 ---
 
-## [Explore More, Drift Less: Outcome-Only Reinforcement Learning Can Suffice for Long-Horizon Interactive Agents]({{ site.baseurl }}/papers/2609.01245/)
-
-**2026-09-01** · Liming Pu et al. 
-
-Reinforcement learning is a natural way to post-train LLM agents for long-horizon interactive tasks judged only by end-of-task verification, yet a shared belief holds that outcome-only RL soon hits a ceiling on small open models. Recent work therefore compensates around the training with denser rewa...
-
-[Read more →]({{ site.baseurl }}/papers/2609.01245/)
-
----
-
 ## [SymFold: Synergizing Evolutionary and Structural Priors for Accurate Protein Inverse Folding]({{ site.baseurl }}/papers/2609.01353/)
 
 **2026-09-01** · Handong Wang et al. 
@@ -288,13 +308,13 @@ Protein inverse folding aims to recover amino acid sequences for a given 3D prot
 
 ---
 
-## [An Agentic Retrobiosynthesis Framework with Learned Frontier Selection]({{ site.baseurl }}/papers/2608.30702/)
+## [Explore More, Drift Less: Outcome-Only Reinforcement Learning Can Suffice for Long-Horizon Interactive Agents]({{ site.baseurl }}/papers/2609.01245/)
 
-**2026-08-31** · Philippe Meyer et al. 
+**2026-09-01** · Liming Pu et al. 
 
-Large language models are increasingly used as agents for multistep retrosynthesis, raising the question of how much their search policy contributes independently of the underlying reaction model. We investigate this question in a biological setting through rule-based retrobiosynthesis: a determinis...
+Reinforcement learning is a natural way to post-train LLM agents for long-horizon interactive tasks judged only by end-of-task verification, yet a shared belief holds that outcome-only RL soon hits a ceiling on small open models. Recent work therefore compensates around the training with denser rewa...
 
-[Read more →]({{ site.baseurl }}/papers/2608.30702/)
+[Read more →]({{ site.baseurl }}/papers/2609.01245/)
 
 ---
 
@@ -315,6 +335,16 @@ Scientific progress depends not only on finding solutions, but on learning the r
 Accurate molecular property prediction requires both statistical reliability and chemical reasoning. Graph neural networks can be calibrated directly on labeled assays but remain limited by the coverage of their training data. Large language models (LLMs) can compare molecular evidence and articulat...
 
 [Read more →]({{ site.baseurl }}/papers/2608.30674/)
+
+---
+
+## [An Agentic Retrobiosynthesis Framework with Learned Frontier Selection]({{ site.baseurl }}/papers/2608.30702/)
+
+**2026-08-31** · Philippe Meyer et al. 
+
+Large language models are increasingly used as agents for multistep retrosynthesis, raising the question of how much their search policy contributes independently of the underlying reaction model. We investigate this question in a biological setting through rule-based retrobiosynthesis: a determinis...
+
+[Read more →]({{ site.baseurl }}/papers/2608.30702/)
 
 ---
 
@@ -508,16 +538,6 @@ Early-stage molecular design is an iterative process, not just a task of generat
 
 ---
 
-## [Eigenius: A Typed Knowledge-Graph DBMS with Epistemic Stratification and Institution-Mediated Reasoning]({{ site.baseurl }}/papers/2608.04457/)
-
-**2026-08-05** · Hans-Martin Will et al. 
-
-As "AI Scientists" emerge to drive research via the Model Context Protocol (MCP), systems relying on ephemeral scripts will fail. The sheer scale of stateful, interconnected evidence requires a machine-walkable warranty grounded in a purpose-built database architecture. Eigenius is an open-source, t...
-
-[Read more →]({{ site.baseurl }}/papers/2608.04457/)
-
----
-
 ## [CrossAudit: A Git-Native, Cross-Vendor Audit Loop for Agentic Science]({{ site.baseurl }}/papers/2608.28631/)
 
 **2026-08-05** · Zhaohe Dong et al. 
@@ -525,6 +545,16 @@ As "AI Scientists" emerge to drive research via the Model Context Protocol (MCP)
 An AI scientist should not grade its own homework. Yet in the systems we examined, the agent that reviews the work usually comes from the same model family as the agent that produced it, or at least from the same vendor. Model evaluators are known to favour their own generations. Whether models trai...
 
 [Read more →]({{ site.baseurl }}/papers/2608.28631/)
+
+---
+
+## [Eigenius: A Typed Knowledge-Graph DBMS with Epistemic Stratification and Institution-Mediated Reasoning]({{ site.baseurl }}/papers/2608.04457/)
+
+**2026-08-05** · Hans-Martin Will et al. 
+
+As "AI Scientists" emerge to drive research via the Model Context Protocol (MCP), systems relying on ephemeral scripts will fail. The sheer scale of stateful, interconnected evidence requires a machine-walkable warranty grounded in a purpose-built database architecture. Eigenius is an open-source, t...
+
+[Read more →]({{ site.baseurl }}/papers/2608.04457/)
 
 ---
 
@@ -608,16 +638,6 @@ Structure-based drug design (SBDD) leverages the 3D structure of protein targets
 
 ---
 
-## [SciForge: An AI-Native, Multimodal Workbench for Scientific Discovery]({{ site.baseurl }}/papers/2607.16038/)
-
-**2026-07-17** ·  SciForge Team et al. 
-
-Scientific work increasingly spans heterogeneous artifacts -- papers, code, datasets, scientific file formats, model outputs, figures, manuscripts, and team decisions -- yet general-purpose AI assistants rarely preserve these objects as a coherent, auditable research state. We present SciForge, a mu...
-
-[Read more →]({{ site.baseurl }}/papers/2607.16038/)
-
----
-
 ## [S1-Omni: A Unified Multimodal Reasoning Model for Scientific Understanding, Prediction, and Generation]({{ site.baseurl }}/papers/2607.15686/)
 
 **2026-07-17** · Jiahao Zhao et al. 
@@ -625,6 +645,16 @@ Scientific work increasingly spans heterogeneous artifacts -- papers, code, data
 We present S1-Omni, a unified multimodal reasoning model for scientific understanding, prediction, and generation. AI for Science (AI4S) has advanced significantly through domain-specific models, tool-augmented LLMs, and scientific language models. However, model capabilities remain highly fragmente...
 
 [Read more →]({{ site.baseurl }}/papers/2607.15686/)
+
+---
+
+## [SciForge: An AI-Native, Multimodal Workbench for Scientific Discovery]({{ site.baseurl }}/papers/2607.16038/)
+
+**2026-07-17** ·  SciForge Team et al. 
+
+Scientific work increasingly spans heterogeneous artifacts -- papers, code, datasets, scientific file formats, model outputs, figures, manuscripts, and team decisions -- yet general-purpose AI assistants rarely preserve these objects as a coherent, auditable research state. We present SciForge, a mu...
+
+[Read more →]({{ site.baseurl }}/papers/2607.16038/)
 
 ---
 
@@ -638,16 +668,6 @@ Multi-step retrosynthesis planning seeks to decompose a target molecule into com
 
 ---
 
-## [TheBioCollection: Unified Pre-Training Scale LLM Corpus for Biology]({{ site.baseurl }}/papers/2607.08803/)
-
-**2026-07-09** · Hyunjin Seo et al. 
-
-The push toward large language models for biology (BioLM) has created a need for training corpora that can endow models with a genuine understanding of biology. However, existing biological resources, such as molecular databases, protein repositories, genomic annotations, single-cell atlases, and pa...
-
-[Read more →]({{ site.baseurl }}/papers/2607.08803/)
-
----
-
 ## [DrugGen 2: A disease-aware language model for enhancing drug discovery]({{ site.baseurl }}/papers/2607.08404/)
 
 **2026-07-09** · Ali Motahharynia et al. 
@@ -655,6 +675,16 @@ The push toward large language models for biology (BioLM) has created a need for
 Current computational approaches for drug design typically focus on generating molecules conditioned on specific targets or general molecular properties, often neglecting the influence of disease context on target behavior and therapeutic outcomes. To address this gap, we introduce DrugGen-2, a nove...
 
 [Read more →]({{ site.baseurl }}/papers/2607.08404/)
+
+---
+
+## [TheBioCollection: Unified Pre-Training Scale LLM Corpus for Biology]({{ site.baseurl }}/papers/2607.08803/)
+
+**2026-07-09** · Hyunjin Seo et al. 
+
+The push toward large language models for biology (BioLM) has created a need for training corpora that can endow models with a genuine understanding of biology. However, existing biological resources, such as molecular databases, protein repositories, genomic annotations, single-cell atlases, and pa...
+
+[Read more →]({{ site.baseurl }}/papers/2607.08803/)
 
 ---
 
