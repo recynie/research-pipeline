@@ -5,8 +5,28 @@ title: "AI Research Daily"
 
 # AI Research Daily — Daily Paper Digest
 
-**2026-10-03** — 45 new papers from arXiv. [📌 View favorites]({{ site.baseurl }}/favorites/) for archived papers.
+**2026-10-04** — 47 new papers from arXiv. [📌 View favorites]({{ site.baseurl }}/favorites/) for archived papers.
 
+
+## [AutoPDEBench: Benchmarking LLM Auto-Research for Neural PDE Solver Design]({{ site.baseurl }}/papers/2609.32245/)
+
+**2026-09-26** · Ruoyan Li et al. 
+
+Partial differential equations (PDEs) are essential for modeling complex physical systems, and neural solvers have recently emerged as powerful data-driven tools for numerically solving them. However, existing neural solvers struggle with domain-specific challenges, such as varying parameters and hi...
+
+[Read more →]({{ site.baseurl }}/papers/2609.32245/)
+
+---
+
+## [SkillVine: Agent Skill Evolution via Branching Exploration]({{ site.baseurl }}/papers/2609.32731/)
+
+**2026-09-26** · Kaiwei Liu et al. 
+
+Agent skills encapsulate reusable procedural knowledge that enables LLM agents to perform tasks, and they can be improved automatically using trajectories from interactions with the environment. This is the classic problem of skill evolution. Existing approaches predominately follow a linear evoluti...
+
+[Read more →]({{ site.baseurl }}/papers/2609.32731/)
+
+---
 
 ## [Up and Down the Abstraction Ladder: Code-Based Skills for Language Agents]({{ site.baseurl }}/papers/2609.31076/)
 
@@ -108,16 +128,6 @@ Thermal optimization of 2D CFET inverters requires testing structural proposals 
 
 ---
 
-## [Artificial intelligence and biosecurity: capabilities, threat pathways, and defense-in-depth governance]({{ site.baseurl }}/papers/2609.16213/)
-
-**2026-09-14** · Candace S. Y. Chan et al. 
-
-Artificial intelligence is reshaping biological research across an increasingly connected digital-to-physical workflow. General-purpose large language models can retrieve and integrate scientific information, support experimental planning, and computational analysis; biological foundation models can...
-
-[Read more →]({{ site.baseurl }}/papers/2609.16213/)
-
----
-
 ## [OpenAI4S: Code as Action, Science as Sessions]({{ site.baseurl }}/papers/2609.15096/)
 
 **2026-09-14** · Gongbo Zhang et al. 
@@ -125,6 +135,16 @@ Artificial intelligence is reshaping biological research across an increasingly 
 AI co-scientists could accelerate computational research, but over a long-running study the workflow also has to stay inspectable, resumable and reproducible, which requires persistent computational state and provenance. Here we present OpenAI4S, an open-source scientific research agent built around...
 
 [Read more →]({{ site.baseurl }}/papers/2609.15096/)
+
+---
+
+## [Artificial intelligence and biosecurity: capabilities, threat pathways, and defense-in-depth governance]({{ site.baseurl }}/papers/2609.16213/)
+
+**2026-09-14** · Candace S. Y. Chan et al. 
+
+Artificial intelligence is reshaping biological research across an increasingly connected digital-to-physical workflow. General-purpose large language models can retrieve and integrate scientific information, support experimental planning, and computational analysis; biological foundation models can...
+
+[Read more →]({{ site.baseurl }}/papers/2609.16213/)
 
 ---
 
@@ -148,16 +168,6 @@ Chemistry, Manufacturing and Controls (CMC) process development generates an eno
 
 ---
 
-## [Online Surrogate Repair: Decoupling High-Fidelity Feedback from Search Length in Closed-Loop Discovery]({{ site.baseurl }}/papers/2609.07655/)
-
-**2026-09-07** · Xiaotang Feng et al. 
-
-Closed-loop AI scientists can generate candidate designs at low marginal computational cost, whereas reliable feedback may require wet-lab synthesis, characterization, or high-fidelity computation. Addressing this imbalance through custom laboratory automation remains infrastructure-intensive and co...
-
-[Read more →]({{ site.baseurl }}/papers/2609.07655/)
-
----
-
 ## [AgentIdeaBench: Benchmarking Scientific Ideation in the Agent Era]({{ site.baseurl }}/papers/2609.07611/)
 
 **2026-09-07** · Yunxiang Mo et al. 
@@ -165,6 +175,16 @@ Closed-loop AI scientists can generate candidate designs at low marginal computa
 Scientific ideation is the capacity to formulate novel and testable hypotheses from scientific evidence, and autonomous AI scientists depend on it. Existing evaluations largely assess it by asking models to generate ideas from a static, curated set of reference papers. That passive setup departs fro...
 
 [Read more →]({{ site.baseurl }}/papers/2609.07611/)
+
+---
+
+## [Online Surrogate Repair: Decoupling High-Fidelity Feedback from Search Length in Closed-Loop Discovery]({{ site.baseurl }}/papers/2609.07655/)
+
+**2026-09-07** · Xiaotang Feng et al. 
+
+Closed-loop AI scientists can generate candidate designs at low marginal computational cost, whereas reliable feedback may require wet-lab synthesis, characterization, or high-fidelity computation. Addressing this imbalance through custom laboratory automation remains infrastructure-intensive and co...
+
+[Read more →]({{ site.baseurl }}/papers/2609.07655/)
 
 ---
 
@@ -228,16 +248,6 @@ Scientific progress depends not only on finding solutions, but on learning the r
 
 ---
 
-## [CoMPASS: Collaborative Molecular Property Prediction via Adaptive Small-Large Model Synergy]({{ site.baseurl }}/papers/2608.30674/)
-
-**2026-08-31** · Wentao Li et al. 
-
-Accurate molecular property prediction requires both statistical reliability and chemical reasoning. Graph neural networks can be calibrated directly on labeled assays but remain limited by the coverage of their training data. Large language models (LLMs) can compare molecular evidence and articulat...
-
-[Read more →]({{ site.baseurl }}/papers/2608.30674/)
-
----
-
 ## [An Agentic Retrobiosynthesis Framework with Learned Frontier Selection]({{ site.baseurl }}/papers/2608.30702/)
 
 **2026-08-31** · Philippe Meyer et al. 
@@ -245,6 +255,16 @@ Accurate molecular property prediction requires both statistical reliability and
 Large language models are increasingly used as agents for multistep retrosynthesis, raising the question of how much their search policy contributes independently of the underlying reaction model. We investigate this question in a biological setting through rule-based retrobiosynthesis: a determinis...
 
 [Read more →]({{ site.baseurl }}/papers/2608.30702/)
+
+---
+
+## [CoMPASS: Collaborative Molecular Property Prediction via Adaptive Small-Large Model Synergy]({{ site.baseurl }}/papers/2608.30674/)
+
+**2026-08-31** · Wentao Li et al. 
+
+Accurate molecular property prediction requires both statistical reliability and chemical reasoning. Graph neural networks can be calibrated directly on labeled assays but remain limited by the coverage of their training data. Large language models (LLMs) can compare molecular evidence and articulat...
+
+[Read more →]({{ site.baseurl }}/papers/2608.30674/)
 
 ---
 
@@ -398,16 +418,6 @@ The replicability of papers is a cornerstone of scientific knowledge, ensuring t
 
 ---
 
-## [Mechanist: AI as a Scientific Instrument for Discovering the Mechanisms of Intelligence]({{ site.baseurl }}/papers/2608.12036/)
-
-**2026-08-12** · Mengru Wang et al. 
-
-AI models are increasingly used in scientific discovery and human decision-making. Yet how AI models work and what risks they pose remain poorly understood. As AI development becomes faster and more automated, research on the mechanisms underlying AI remains largely manual. To bridge this gap, we in...
-
-[Read more →]({{ site.baseurl }}/papers/2608.12036/)
-
----
-
 ## [Multi-Agent Closed-Loop Reasoning for Organic Structure Elucidation from Multimodal Spectra]({{ site.baseurl }}/papers/2608.14720/)
 
 **2026-08-12** · Bingsen Xue et al. 
@@ -415,6 +425,16 @@ AI models are increasingly used in scientific discovery and human decision-makin
 Following the molecular discovery and synthesis revolutions, scalable automated structure elucidation from routine spectroscopic data remains an outstanding challenge. Despite decades of computational efforts, no existing system achieved reliable reasoning over unseen spectra. Here, we propose MACRO...
 
 [Read more →]({{ site.baseurl }}/papers/2608.14720/)
+
+---
+
+## [Mechanist: AI as a Scientific Instrument for Discovering the Mechanisms of Intelligence]({{ site.baseurl }}/papers/2608.12036/)
+
+**2026-08-12** · Mengru Wang et al. 
+
+AI models are increasingly used in scientific discovery and human decision-making. Yet how AI models work and what risks they pose remain poorly understood. As AI development becomes faster and more automated, research on the mechanisms underlying AI remains largely manual. To bridge this gap, we in...
+
+[Read more →]({{ site.baseurl }}/papers/2608.12036/)
 
 ---
 
