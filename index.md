@@ -5,16 +5,16 @@ title: "AI Research Daily"
 
 # AI Research Daily — Daily Paper Digest
 
-**2026-10-10** — 43 new papers from arXiv. [📌 View favorites]({{ site.baseurl }}/favorites/) for archived papers.
+**2026-10-11** — 43 new papers from arXiv. [📌 View favorites]({{ site.baseurl }}/favorites/) for archived papers.
 
 
-## [MobiAgent: Dual-Loop Recursive Policy Self-Improvement for Long-Horizon Mobile Manipulation]({{ site.baseurl }}/papers/2610.03476/)
+## [Predictor-Guided Latent Space Codon Optimization for Maximizing Protein Expression]({{ site.baseurl }}/papers/2610.03098/)
 
-**2026-10-02** · Chenzhi Liu et al. 
+**2026-10-02** · Alberto Caron et al. 
 
-Long-horizon mobile manipulation presents significant challenges due to compounding execution errors and capacity interference between locomotion and arm control. While recent Vision-Language-Action models excel at short-horizon tasks, they lack the hierarchical reasoning required for multi-stage ob...
+Codon optimization, the process of selecting synonymous codons to improve mRNA translation efficiency and protein expression, is central to therapeutic protein production and mRNA vaccines, yet it remains a hard problem. The design space is discrete and combinatorially large, precluding gradient-bas...
 
-[Read more →]({{ site.baseurl }}/papers/2610.03476/)
+[Read more →]({{ site.baseurl }}/papers/2610.03098/)
 
 ---
 
@@ -28,6 +28,16 @@ Real-world time series are frequently driven by exogenous events and structural 
 
 ---
 
+## [MobiAgent: Dual-Loop Recursive Policy Self-Improvement for Long-Horizon Mobile Manipulation]({{ site.baseurl }}/papers/2610.03476/)
+
+**2026-10-02** · Chenzhi Liu et al. 
+
+Long-horizon mobile manipulation presents significant challenges due to compounding execution errors and capacity interference between locomotion and arm control. While recent Vision-Language-Action models excel at short-horizon tasks, they lack the hierarchical reasoning required for multi-stage ob...
+
+[Read more →]({{ site.baseurl }}/papers/2610.03476/)
+
+---
+
 ## [SoftGene: Protein Language Model-Enhanced Soft Prompting for Interpretable Gene Set Annotation]({{ site.baseurl }}/papers/2610.03029/)
 
 **2026-10-02** · Drew Ross et al. 
@@ -35,26 +45,6 @@ Real-world time series are frequently driven by exogenous events and structural 
 Gene set analysis is a cornerstone of functional genomics, yet it remains labor-intensive and heavily dependent on manual curation and expert biological interpretation. While Large Language Models (LLMs) have emerged as powerful tools for genomic reasoning and annotation, most existing approaches re...
 
 [Read more →]({{ site.baseurl }}/papers/2610.03029/)
-
----
-
-## [Predictor-Guided Latent Space Codon Optimization for Maximizing Protein Expression]({{ site.baseurl }}/papers/2610.03098/)
-
-**2026-10-02** · Alberto Caron et al. 
-
-Codon optimization, the process of selecting synonymous codons to improve mRNA translation efficiency and protein expression, is central to therapeutic protein production and mRNA vaccines, yet it remains a hard problem. The design space is discrete and combinatorially large, precluding gradient-bas...
-
-[Read more →]({{ site.baseurl }}/papers/2610.03098/)
-
----
-
-## [Can AI Scientists Coordinate at Runtime?]({{ site.baseurl }}/papers/2610.00980/)
-
-**2026-10-01** · Zijian Liu et al. 
-
-Multi-agent AI scientists have shown improving performance across a diverse range of tasks. Yet a common approach is design-time agentic orchestration, which typically relies on fixed workflows. In contrast, human scientists coordinate and adjust their division of labor at runtime. We therefore ask:...
-
-[Read more →]({{ site.baseurl }}/papers/2610.00980/)
 
 ---
 
@@ -68,13 +58,13 @@ We introduce Gacha Decoding, an inference-time method for eliciting diverse lang
 
 ---
 
-## [YouRA: A Persistent-State Architecture for Evidence-Traceable Autonomous Research Agents]({{ site.baseurl }}/papers/2610.01097/)
+## [Can AI Scientists Coordinate at Runtime?]({{ site.baseurl }}/papers/2610.00980/)
 
-**2026-10-01** · Yoonkyu Woo et al. 
+**2026-10-01** · Zijian Liu et al. 
 
-End-to-end research agents can now produce complete scientific papers, yet manuscript claims often diverge from executed experiments. This gap is structural: research state, failure histories, and claim-evidence alignment are not maintained as persistent, verifiable state across long-horizon pipelin...
+Multi-agent AI scientists have shown improving performance across a diverse range of tasks. Yet a common approach is design-time agentic orchestration, which typically relies on fixed workflows. In contrast, human scientists coordinate and adjust their division of labor at runtime. We therefore ask:...
 
-[Read more →]({{ site.baseurl }}/papers/2610.01097/)
+[Read more →]({{ site.baseurl }}/papers/2610.00980/)
 
 ---
 
@@ -88,13 +78,13 @@ Building reliable robot capabilities across diverse tasks requires substantial h
 
 ---
 
-## [SkillFM: Generating Skills for LLM Agents via Latent Flow Matching]({{ site.baseurl }}/papers/2609.39382/)
+## [YouRA: A Persistent-State Architecture for Evidence-Traceable Autonomous Research Agents]({{ site.baseurl }}/papers/2610.01097/)
 
-**2026-09-30** · Zuming Zhang et al. 
+**2026-10-01** · Yoonkyu Woo et al. 
 
-Textual skills provide reusable guidance for large language model agents, but existing approaches often rely on manually curated skill banks or reinforcement learning with indirect and delayed feedback. We introduce SkillFM (Skill Flow Matching), a generative framework that synthesizes task-conditio...
+End-to-end research agents can now produce complete scientific papers, yet manuscript claims often diverge from executed experiments. This gap is structural: research state, failure histories, and claim-evidence alignment are not maintained as persistent, verifiable state across long-horizon pipelin...
 
-[Read more →]({{ site.baseurl }}/papers/2609.39382/)
+[Read more →]({{ site.baseurl }}/papers/2610.01097/)
 
 ---
 
@@ -108,13 +98,13 @@ Large language models rely heavily on human text, which often conveys surface an
 
 ---
 
-## [Right Answers, Costly Models: The Efficiency Gap in LLM-based Optimization Modeling]({{ site.baseurl }}/papers/2609.38884/)
+## [SkillFM: Generating Skills for LLM Agents via Latent Flow Matching]({{ site.baseurl }}/papers/2609.39382/)
 
-**2026-09-30** · Zhong Li et al. 
+**2026-09-30** · Zuming Zhang et al. 
 
-Optimization modeling formulates real-world decision problems as mathematical programs that solvers can use to find optimal decisions. Large language models (LLMs) can automate this process, but the resulting correct formulations can require substantial time and memory to construct and solve, limiti...
+Textual skills provide reusable guidance for large language model agents, but existing approaches often rely on manually curated skill banks or reinforcement learning with indirect and delayed feedback. We introduce SkillFM (Skill Flow Matching), a generative framework that synthesizes task-conditio...
 
-[Read more →]({{ site.baseurl }}/papers/2609.38884/)
+[Read more →]({{ site.baseurl }}/papers/2609.39382/)
 
 ---
 
@@ -125,6 +115,16 @@ Optimization modeling formulates real-world decision problems as mathematical pr
 When Isaac Newton discovered the law of gravitation, he did so through an iterative process of analyzing observed data such as planetary patterns, finding the underlying mechanisms by describing patterns in mathematical equations, and refining his theory against the Moon's orbit, revealing the start...
 
 [Read more →]({{ site.baseurl }}/papers/2610.00492/)
+
+---
+
+## [Right Answers, Costly Models: The Efficiency Gap in LLM-based Optimization Modeling]({{ site.baseurl }}/papers/2609.38884/)
+
+**2026-09-30** · Zhong Li et al. 
+
+Optimization modeling formulates real-world decision problems as mathematical programs that solvers can use to find optimal decisions. Large language models (LLMs) can automate this process, but the resulting correct formulations can require substantial time and memory to construct and solve, limiti...
+
+[Read more →]({{ site.baseurl }}/papers/2609.38884/)
 
 ---
 
@@ -168,16 +168,6 @@ Drug design couples property evaluation, conditional generation, structure-based
 
 ---
 
-## [BOReFT: Manifold Steering of Language Models for Black-box Optimization]({{ site.baseurl }}/papers/2609.33722/)
-
-**2026-09-27** · Dhruv Agarwal et al. 
-
-Language models are increasingly used as proposal models for black-box search, from program optimization to molecular design. Existing approaches typically improve proposals through iterative prompting or parameter updates, offering limited control over how completely and efficiently the model's sea...
-
-[Read more →]({{ site.baseurl }}/papers/2609.33722/)
-
----
-
 ## [LLM sequential decision making under uncertainty in biochemical domains]({{ site.baseurl }}/papers/2609.33061/)
 
 **2026-09-27** · Mattias Akke et al. 
@@ -185,6 +175,16 @@ Language models are increasingly used as proposal models for black-box search, f
 Large language models (LLMs) are increasingly used to drive scientific discovery. Understanding how LLMs make decisions from new data and memory of the literature is vital before trusting them to design experiments under tight experimental budgets. However, their decision strategies are invisible in...
 
 [Read more →]({{ site.baseurl }}/papers/2609.33061/)
+
+---
+
+## [BOReFT: Manifold Steering of Language Models for Black-box Optimization]({{ site.baseurl }}/papers/2609.33722/)
+
+**2026-09-27** · Dhruv Agarwal et al. 
+
+Language models are increasingly used as proposal models for black-box search, from program optimization to molecular design. Existing approaches typically improve proposals through iterative prompting or parameter updates, offering limited control over how completely and efficiently the model's sea...
+
+[Read more →]({{ site.baseurl }}/papers/2609.33722/)
 
 ---
 
@@ -238,16 +238,6 @@ Thermal optimization of 2D CFET inverters requires testing structural proposals 
 
 ---
 
-## [OpenAI4S: Code as Action, Science as Sessions]({{ site.baseurl }}/papers/2609.15096/)
-
-**2026-09-14** · Gongbo Zhang et al. 
-
-AI co-scientists could accelerate computational research, but over a long-running study the workflow also has to stay inspectable, resumable and reproducible, which requires persistent computational state and provenance. Here we present OpenAI4S, an open-source scientific research agent built around...
-
-[Read more →]({{ site.baseurl }}/papers/2609.15096/)
-
----
-
 ## [Artificial intelligence and biosecurity: capabilities, threat pathways, and defense-in-depth governance]({{ site.baseurl }}/papers/2609.16213/)
 
 **2026-09-14** · Candace S. Y. Chan et al. 
@@ -255,6 +245,16 @@ AI co-scientists could accelerate computational research, but over a long-runnin
 Artificial intelligence is reshaping biological research across an increasingly connected digital-to-physical workflow. General-purpose large language models can retrieve and integrate scientific information, support experimental planning, and computational analysis; biological foundation models can...
 
 [Read more →]({{ site.baseurl }}/papers/2609.16213/)
+
+---
+
+## [OpenAI4S: Code as Action, Science as Sessions]({{ site.baseurl }}/papers/2609.15096/)
+
+**2026-09-14** · Gongbo Zhang et al. 
+
+AI co-scientists could accelerate computational research, but over a long-running study the workflow also has to stay inspectable, resumable and reproducible, which requires persistent computational state and provenance. Here we present OpenAI4S, an open-source scientific research agent built around...
+
+[Read more →]({{ site.baseurl }}/papers/2609.15096/)
 
 ---
 
@@ -298,16 +298,6 @@ Closed-loop AI scientists can generate candidate designs at low marginal computa
 
 ---
 
-## [Agentic BAIM-LLM Evaluation (ABLE): Benchmarking LLM Use of Protein Design Tools]({{ site.baseurl }}/papers/2609.05818/)
-
-**2026-09-05** · Bryce Cai et al. 
-
-We introduce ABLE, a benchmark for evaluating LLM agents' ability to use biological AI models (BAIMs), such as ProteinMPNN and AlphaFold3, in dual-use protein design workflows. ABLE assesses agent performance through a set of tasks spanning structure retrieval, sequence generation, and design valida...
-
-[Read more →]({{ site.baseurl }}/papers/2609.05818/)
-
----
-
 ## [OpenDiscoveryTrace: Process Traces for Evaluating AI Scientist Workflows]({{ site.baseurl }}/papers/2609.09203/)
 
 **2026-09-05** · Aayam Bansal et al. 
@@ -315,6 +305,16 @@ We introduce ABLE, a benchmark for evaluating LLM agents' ability to use biologi
 Existing benchmarks for autonomous AI scientists evaluate only final outputs---generated code, hypotheses, or papers---yet discard the reasoning process by which those outputs were obtained. This makes it impossible to audit scientific methodology, diagnose failure modes, or distinguish systematic r...
 
 [Read more →]({{ site.baseurl }}/papers/2609.09203/)
+
+---
+
+## [Agentic BAIM-LLM Evaluation (ABLE): Benchmarking LLM Use of Protein Design Tools]({{ site.baseurl }}/papers/2609.05818/)
+
+**2026-09-05** · Bryce Cai et al. 
+
+We introduce ABLE, a benchmark for evaluating LLM agents' ability to use biological AI models (BAIMs), such as ProteinMPNN and AlphaFold3, in dual-use protein design workflows. ABLE assesses agent performance through a set of tasks spanning structure retrieval, sequence generation, and design valida...
+
+[Read more →]({{ site.baseurl }}/papers/2609.05818/)
 
 ---
 
@@ -348,6 +348,16 @@ Protein inverse folding aims to recover amino acid sequences for a given 3D prot
 
 ---
 
+## [An Agentic Retrobiosynthesis Framework with Learned Frontier Selection]({{ site.baseurl }}/papers/2608.30702/)
+
+**2026-08-31** · Philippe Meyer et al. 
+
+Large language models are increasingly used as agents for multistep retrosynthesis, raising the question of how much their search policy contributes independently of the underlying reaction model. We investigate this question in a biological setting through rule-based retrobiosynthesis: a determinis...
+
+[Read more →]({{ site.baseurl }}/papers/2608.30702/)
+
+---
+
 ## [Science sandboxes measure the scientific capability of AI agents]({{ site.baseurl }}/papers/2608.30165/)
 
 **2026-08-31** · Arya S. Rao et al. 
@@ -368,16 +378,6 @@ Accurate molecular property prediction requires both statistical reliability and
 
 ---
 
-## [An Agentic Retrobiosynthesis Framework with Learned Frontier Selection]({{ site.baseurl }}/papers/2608.30702/)
-
-**2026-08-31** · Philippe Meyer et al. 
-
-Large language models are increasingly used as agents for multistep retrosynthesis, raising the question of how much their search policy contributes independently of the underlying reaction model. We investigate this question in a biological setting through rule-based retrobiosynthesis: a determinis...
-
-[Read more →]({{ site.baseurl }}/papers/2608.30702/)
-
----
-
 ## [Can LLM Agents Discover? Evaluating Creativity on ML Engineering Tasks]({{ site.baseurl }}/papers/2608.30047/)
 
 **2026-08-30** · Shitanshu Bhushan et al. 
@@ -388,13 +388,13 @@ Recent AI systems promise autonomous scientific discovery, claiming to discover 
 
 ---
 
-## [Agentic AI uncovers conserved cross-tissue protein co-abundance programs inaccessible to single-dataset analysis]({{ site.baseurl }}/papers/2608.28990/)
+## [The Illusion of Replacement: Rethinking Specialized Machine Learning Models in the Foundation Model Era]({{ site.baseurl }}/papers/2608.28980/)
 
-**2026-08-29** · Runyu Guan et al. 
+**2026-08-29** · Kiyan Rezaee et al. 
 
-Protein co-abundance clusters preserved across tissues can reveal shared disease mechanisms and candidate therapeutic targets, particularly when proteins implicated in organ-confined diseases converge in peripheral or accessible tissues. However, previous cross-tissue studies have focused on biologi...
+Specialized machine learning architectures encode structural assumptions (equivariance, permutation invariance, relational structure) that language-based foundation models lack by design. This review asks whether such assumptions can instead be acquired through language, drawing on a corpus of 186 p...
 
-[Read more →]({{ site.baseurl }}/papers/2608.28990/)
+[Read more →]({{ site.baseurl }}/papers/2608.28980/)
 
 ---
 
@@ -408,13 +408,13 @@ Protein structure modeling rests on a single computational primitive: the intera
 
 ---
 
-## [The Illusion of Replacement: Rethinking Specialized Machine Learning Models in the Foundation Model Era]({{ site.baseurl }}/papers/2608.28980/)
+## [Agentic AI uncovers conserved cross-tissue protein co-abundance programs inaccessible to single-dataset analysis]({{ site.baseurl }}/papers/2608.28990/)
 
-**2026-08-29** · Kiyan Rezaee et al. 
+**2026-08-29** · Runyu Guan et al. 
 
-Specialized machine learning architectures encode structural assumptions (equivariance, permutation invariance, relational structure) that language-based foundation models lack by design. This review asks whether such assumptions can instead be acquired through language, drawing on a corpus of 186 p...
+Protein co-abundance clusters preserved across tissues can reveal shared disease mechanisms and candidate therapeutic targets, particularly when proteins implicated in organ-confined diseases converge in peripheral or accessible tissues. However, previous cross-tissue studies have focused on biologi...
 
-[Read more →]({{ site.baseurl }}/papers/2608.28980/)
+[Read more →]({{ site.baseurl }}/papers/2608.28990/)
 
 ---
 
